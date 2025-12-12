@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/base/ubbase
+      dockerfile: ./dockerfiles/ubbase/ubbase
     container_name: ${CONTAINER_NAME}
     image: vila/ubbase
 
