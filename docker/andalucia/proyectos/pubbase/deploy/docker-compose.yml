@@ -1,0 +1,24 @@
+services:
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/base/ubbase
+    container_name: ${CONTAINER_NAME}
+    image: vila/ubbase
+
+    ports:
+      - ${PORT_SSH}:80
+    env_file:
+      - ./.env
+    volumes:
+      - ./logs:/root/logs 
+    networks:
+      netmegacrossover:
+        ipv4_address: ${IP_WEB}
+networks:
+  netmegacrossover:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

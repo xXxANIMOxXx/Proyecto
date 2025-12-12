@@ -1,0 +1,6 @@
+.header-instituto {
+  height: 250px;
+  background-image: url('../../public/img/header-andalucia.jpg');
+  background-size: cover;
+  background-position: center;
+}
