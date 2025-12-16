@@ -1,4 +1,4 @@
-FROM vila/ubbase
+FROM vila/security
 
 USER root
 RUN apt update && apt install -yq --no-install-recommends \

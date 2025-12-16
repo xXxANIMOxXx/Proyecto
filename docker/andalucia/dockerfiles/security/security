@@ -1,0 +1,18 @@
+# 1. Heredamos de tu capa base
+FROM vila/ubbase
+
+USER root
+
+# 2. Preparamos el entorno de trabajo específico para seguridad
+RUN mkdir -p /root/admin/security
+WORKDIR /root/admin/security
+
+# 3. Copiamos los scripts administrativos (el del maestro)
+# El contexto es 'docker/andalucia', así que la ruta es relativa a eso
+COPY ./dockerfiles/security/admin .
+
+# 4. Damos permisos de ejecución
+RUN chmod +x ./script_maestro.sh
+
+# NO ponemos ENTRYPOINT. Dejamos que la capa 'nginx' (que heredará de esta) 
+# decida cómo y cuándo arrancar todo.

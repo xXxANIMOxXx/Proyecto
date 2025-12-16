@@ -1,0 +1,10 @@
+services:
+  security_layer:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/security/security
+    image: vila/security
+    container_name: ${CONTAINER_NAME}
+    env_file:
+      - ./.env
+
