@@ -12,7 +12,7 @@ WORKDIR /root/admin/security
 COPY ./dockerfiles/security/admin .
 
 # 4. Damos permisos de ejecución
-RUN chmod +x ./script_maestro.sh
+RUN chmod +x ./start.sh
 
 # NO ponemos ENTRYPOINT. Dejamos que la capa 'nginx' (que heredará de esta) 
 # decida cómo y cuándo arrancar todo.
